@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;700;800&family=Roboto:wght@400;500;700&family=Merriweather:wght@400;700&display=swap');
+
+/* ============================================================
+   LIGHT (default)
+   ============================================================ */
+:root,
+[data-theme="light"] {
+  --c-sidebar:      #0F4E47;
+  --c-primary:      #0F766E;
+  --c-primary-soft: #D1FAE5;
+  --c-primary-15:   rgba(15, 118, 110, 0.14);
+  --c-success:      #10B981;
+  --c-warning:      #D97706;
+  --c-danger:       #DC2626;
+
+  --c-bg:           #F0F4F8;
+  --c-card:         #FFFFFF;
+  --c-cardAlt:      #FAFBFD;
+  --c-border:       #D1D9E6;
+  --c-borderLight:  #E8EDF5;
+  --c-headerBg:     #EEF2F8;
+
+  --c-textPrimary:  #0F172A;
+  --c-textMuted:    #64748B;
+  --c-textLight:    #94A3B8;
+
+  --c-rowAlt:       #F9FAFC;
+  --c-rowHover:     #F5F8FF;
+  --c-filterBg:     #FAFBFD;
+
+  --c-tabActive:    #EEE5FF;
+  --c-tabActiveTxt: #6D28D9;
+
+  --c-progressBg:   #E2E8F0;
+  --c-shadow:       rgba(15,23,42,0.06);
+  --c-shadowStrong: rgba(15,23,42,0.12);
+
+  /* Status badges */
+  --c-st-blueBg:    #DBEAFE;  --c-st-blueTxt:    #1D4ED8;
+  --c-st-violetBg:  #EDE9FE;  --c-st-violetTxt:  #6D28D9;
+  --c-st-greenBg:   #D1FAE5;  --c-st-greenTxt:   #065F46;
+  --c-st-redBg:     #FEE2E2;  --c-st-redTxt:     #991B1B;
+  --c-st-amberBg:   #FEF3C7;  --c-st-amberTxt:   #92400E;
+  --c-st-grayBg:    #F1F5F9;  --c-st-grayTxt:    #475569;
+
+  /* KPI ring uchun rangli tint (background halqa) */
+  --c-tint-primary: rgba( 15,118,110,0.22);
+  --c-tint-success: rgba( 16,185,129,0.22);
+  --c-tint-warning: rgba(217,119,  6,0.25);
+  --c-tint-danger:  rgba(220, 38, 38,0.22);
+}
+
+/* ============================================================
+   DARK
+   ============================================================ */
+[data-theme="dark"] {
+  --c-sidebar:      #051F1D;
+  --c-primary:      #2DD4BF;
+  --c-primary-soft: #134E4A;
+  --c-primary-15:   rgba(45, 212, 191, 0.20);
+  --c-success:      #34D399;
+  --c-warning:      #FBBF24;
+  --c-danger:       #F87171;
+
+  --c-bg:           #0F172A;
+  --c-card:         #1E293B;
+  --c-cardAlt:      #243049;
+  --c-border:       #334155;
+  --c-borderLight:  #2A3650;
+  --c-headerBg:     #243049;
+
+  --c-textPrimary:  #F1F5F9;
+  --c-textMuted:    #94A3B8;
+  --c-textLight:    #64748B;
+
+  --c-rowAlt:       #1A2538;
+  --c-rowHover:     #2D3B57;
+  --c-filterBg:     #243049;
+
+  --c-tabActive:    #3B2F66;
+  --c-tabActiveTxt: #C4B5FD;
+
+  --c-progressBg:   #334155;
+  --c-shadow:       rgba(0,0,0,0.35);
+  --c-shadowStrong: rgba(0,0,0,0.55);
+
+  /* Status badges — pastel text on tinted bg */
+  --c-st-blueBg:    rgba(59,130,246,0.18);   --c-st-blueTxt:    #93C5FD;
+  --c-st-violetBg:  rgba(139,92,246,0.20);   --c-st-violetTxt:  #C4B5FD;
+  --c-st-greenBg:   rgba(16,185,129,0.20);   --c-st-greenTxt:   #6EE7B7;
+  --c-st-redBg:     rgba(239,68,68,0.20);    --c-st-redTxt:     #FCA5A5;
+  --c-st-amberBg:   rgba(245,158,11,0.20);   --c-st-amberTxt:   #FCD34D;
+  --c-st-grayBg:    rgba(148,163,184,0.18);  --c-st-grayTxt:    #CBD5E1;
+
+  /* KPI ring tint — dark mode'da yorqinroq ko'rsatish uchun ko'proq opasit */
+  --c-tint-primary: rgba( 45,212,191,0.32);
+  --c-tint-success: rgba( 52,211,153,0.32);
+  --c-tint-warning: rgba(251,191, 36,0.32);
+  --c-tint-danger:  rgba(248,113,113,0.32);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: var(--c-bg);
+  color: var(--c-textPrimary);
+  font-family: var(--c-font, "Inter", system-ui, sans-serif);
+  transition: background-color .25s ease, color .25s ease;
+}
+
+/* Barcha element body'dan shriftni meros qilib oladi (har joydagi inline override'larni bekor qiladi) */
+* { font-family: inherit; }
+
+/* Asosiy kontent standart o'lchamda (1×). Sidebar'lar `zoom: 1.2` bilan
+   asl o'lchamga nisbatan 20% kattaroq ko'rinadi. */
+
+/* Form elementlar — har temada to'g'ri ranglarda */
+input, select, textarea, button {
+  font-family: inherit;
+  color: inherit;
+}
+input, select, textarea {
+  background: var(--c-card);
+  color: var(--c-textPrimary);
+}
+
+/* Native scrollbar yashirish — overflow ishlaydi, lekin scrollbar ko'rinmaydi */
+.no-scrollbar {
+  scrollbar-width: none;          /* Firefox */
+  -ms-overflow-style: none;        /* IE / legacy Edge */
+}
+.no-scrollbar::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;                   /* Chrome / Safari / new Edge */
+}
+
+/* recharts SVG matn ranglarini theme'ga moslash */
+.recharts-text { fill: var(--c-textMuted); }
+.recharts-cartesian-axis-tick-value { fill: var(--c-textMuted) !important; }
+.recharts-default-tooltip {
+  background: var(--c-card) !important;
+  color: var(--c-textPrimary) !important;
+  border: 1px solid var(--c-border) !important;
+}
